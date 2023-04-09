@@ -4,7 +4,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import MainScreen from "./Component/Main/main";
 import SignUpScreen from "./Component/SignUp/signUp";
 import ProfileScreen from "./Component/Profile/profile";
-
+import Feedback from "./Component/Feedback/feedback";
 //Lecture 06
 //Custom component, Navigation, passing data, image, pressable
 
@@ -17,6 +17,7 @@ function App() {
         <Drawer.Screen name="Main" component={MainScreen} />
         <Drawer.Screen name="Sign Up/Login" component={SignUpScreen} />
         <Drawer.Screen name="Profile" component={ProfileScreen} />
+        <Drawer.Screen name="Feedback" component={Feedback} />
       </Drawer.Navigator>
     </NavigationContainer>
   );

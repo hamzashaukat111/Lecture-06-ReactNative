@@ -22,7 +22,17 @@ const ProfileScreen = ({ route, navigation }) => {
       });
     }
   };
-
+  const handleSendingFeedback = () => {
+    if (firstName.trim() === "" || lastName.trim() === "") {
+      setNameError("Please Enter data");
+    } else {
+      navigation.navigate("Feedback", {
+        firstNameKey: firstName,
+        lastNameKey: lastName,
+        dateKey: date.toLocaleDateString(),
+      });
+    }
+  };
   const handleDateChange = (event, selectedDate) => {
     const currentDate = selectedDate || date;
     setShowDatePicker(Platform.OS === "ios");
@@ -80,6 +90,10 @@ const ProfileScreen = ({ route, navigation }) => {
       <Text style={{ margin: 20 }}>Selected Date: {date.toString()}</Text>
       <Pressable style={styles_profile.button} onPress={handleSendingDataBack}>
         <Text style={styles_profile.buttonText}>SHARE</Text>
+      </Pressable>
+      <Pressable style={styles_profile.button} onPress={handleSendingFeedback}>
+        <Text style={styles_profile.buttonText}>GO TO NEXT</Text>
+            
       </Pressable>
     </View>
   );
